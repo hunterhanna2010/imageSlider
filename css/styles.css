@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #000;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+}
+
+header .logo {
+    font-size: 3em;
+    color: #fafafa;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header .toggle {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 30px;
+    cursor: pointer;
+    color: #fafafa;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background: #000;
+}
+
+.slider .imgBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+    transition-delay: 0s;
+    z-index: 1;
+    clip-path: circle(0px at center);
+}
+
+.slider .imgBox img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider .imgBox .content {
+    position: relative;
+    text-align: center;
+    max-width: 800px;
+}
+
+.slider .imgBox .content h2 {
+    font-size: 6em;
+    line-height: 1em;
+    color: #fafafa;
+}
+
+.slider .imgBox .content p {
+    font-size: 1.1em;
+    color: #fafafa;
+}
+
+.slider .imgBox .content a {
+    position: relative;
+    display: inline-block;
+    background: #fafafa;
+    padding: 10px 30px;
+    color: #111;
+    font-weight: 500;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+.slider input[type="radio"] {
+    position: relative;
+    z-index: 1000;
+    margin: 5px;
+    margin-bottom: 40px;
+    outline: none;
+    cursor: pointer;
+}
+
+.slider input[type="radio"]:checked + .imgBox {
+    z-index: 10;
+    clip-path: circle(1000px at center);
+    transition-delay: .75s;
+}
+
+@media(max-width:768px) {
+    header {
+        padding: 20px 40px;
+    }
+    .slider .imgBox {
+        padding: 40px;
+    }
+
+    .slider .imgBox .content h2{
+        font-size: 3em;
+    }
+
+    .slider .imgBox .content p {
+        font-size: 1em;
+        color: #fafafa;
+        margin-top: 10px;
+        
+    }
+}
